@@ -621,18 +621,18 @@
 <p>Luckily, I got important information in this doc, FocusParkingView and FocusArea are based on Accessibility too!</p>
 <details class="quote">
 <summary>Quote</summary>
-<h1 id="implement-focusparkingview">Implement FocusParkingView</h1>
-<p>You either can implement your own FocusParkingView or copy the class from the car-ui-library to your project.</p>
-<p>To implement FocusParkingView:</p>
-<p>Hard code the accessibility class name so that the RotaryService can recognize it:</p>
+<p><strong>Implement FocusParkingView</strong></p>
+<p>You either can implement your own <code>FocusParkingView</code> or copy the class from the car-ui-library to your project.</p>
+<p>To implement <code>FocusParkingView</code>:</p>
+<p>Hard code the accessibility class name so that the <code>RotaryService</code> can recognize it:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@Override</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">CharSequence</span><span class="w"> </span><span class="nf">getAccessibilityClassName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;com.android.car.ui.FocusParkingView&quot;</span><span class="p">;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
 </span></code></pre></div>
-<h1 id="implement-focusarea">Implement FocusArea</h1>
-<p>Like FocusParkingView, you can either implement your own FocusArea or copy the class from the car-ui-library to your project.</p>
-<p>To implement FocusArea:</p>
+<p><strong>Implement FocusArea</strong></p>
+<p>Like <code>FocusParkingView</code>, you can either implement your own <code>FocusArea</code> or copy the class from the car-ui-library to your project.</p>
+<p>To implement <code>FocusArea</code>:</p>
 <p>Hard code the accessibility class name so that rotary service can recognize it:</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@Override</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">public</span><span class="w"> </span><span class="n">CharSequence</span><span class="w"> </span><span class="nf">getAccessibilityClassName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
