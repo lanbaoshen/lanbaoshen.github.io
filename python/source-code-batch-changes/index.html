@@ -12,6 +12,8 @@
         <link rel="prev" href="../bfs-and-dfs-in-dict-traversal/">
       
       
+        <link rel="next" href="../stop-or-kill-a-thread/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
@@ -241,6 +243,23 @@
   
 
       
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../repo/" class="md-tabs__link">
+        
+  
+    
+  
+  Repositories
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -397,6 +416,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -503,9 +526,71 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stop-or-kill-a-thread/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stop or Kill a Thread
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../circular-import/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Circular Import
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../repo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositories
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -551,7 +636,7 @@
 and these operations are too complex to be achieved through the IDE's replacement function.</p>
 <p><a href="https://docs.python.org/3/library/ast.html">AST (Abstract Syntax Trees)</a> is a good choice to do that.</p>
 <dl>
-<dt>For example, we need to perform operations on the following code:</dt>
+<dt>For example, perform operations on the following code:</dt>
 <dd>
 <ul>
 <li>Replace class name <code>Old</code> with <code>New</code>  </li>
@@ -589,7 +674,7 @@ and these operations are too complex to be achieved through the IDE's replacemen
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">class</span> <span class="nc">_BaseTransformer</span><span class="p">(</span><span class="n">NodeTransformer</span><span class="p">):</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">def</span> <span class="nf">visit_ClassDef</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">ClassDef</span><span class="p">):</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">):</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">body</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="k">return</span> <span class="kc">None</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Old&#39;</span><span class="p">):</span>
@@ -640,7 +725,7 @@ and these operations are too complex to be achieved through the IDE's replacemen
 </span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;new_elements.py&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
 </span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">unparse</span><span class="p">(</span><span class="n">modify_tree</span><span class="p">))</span>
 </span></code></pre></div>
-<p>Execute <code>transformer.py</code>, and then we can get the modified code:</p>
+<p>Execute <code>transformer.py</code> to get the modified code:</p>
 <div class="language-python highlight"><span class="filename">new_elements.py</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">NewElements</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">FOO</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">NEW_BTN</span> <span class="o">=</span> <span class="n">Base</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Lanbao&#39;</span><span class="p">)</span>
@@ -708,6 +793,22 @@ And if you need to format the code, you may want to explore tools or libraries l
             </div>
           </a>
         
+        
+          
+          <a href="../stop-or-kill-a-thread/" class="md-footer__link md-footer__link--next" aria-label="Next: Stop or Kill a Thread">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Stop or Kill a Thread
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
