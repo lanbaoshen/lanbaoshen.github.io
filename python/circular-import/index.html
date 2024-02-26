@@ -974,45 +974,43 @@ Even though <code>A</code> and <code>B</code> are not imported, the string <code
 <h3 id="cause_2">Cause</h3>
 <div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">pkg.subpkg_b.module_b</span> <span class="kn">import</span> <span class="n">B</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/__init__.py</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
+<div class="language-python highlight"><span class="filename">pkg/subpkg_a/__init__.py</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">.module_a</span> <span class="kn">import</span> <span class="n">A</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">from</span> <span class="nn">.module_c</span> <span class="kn">import</span> <span class="n">C</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/subpkg_a/__init__.py</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span> <span class="nn">.module_a</span> <span class="kn">import</span> <span class="n">A</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span> <span class="nn">.module_c</span> <span class="kn">import</span> <span class="n">C</span>
+<div class="language-python highlight"><span class="filename">pkg/subpkg_a/module_a.py</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span> <span class="nn">..subpkg_b.module_b</span> <span class="kn">import</span> <span class="n">B</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/subpkg_a/module_a.py</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span> <span class="nn">..subpkg_b.module_b</span> <span class="kn">import</span> <span class="n">B</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="o">...</span>
+<div class="language-python highlight"><span class="filename">pkg/subpkg_a/module_c.py</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/subpkg_a/module_c.py</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">class</span> <span class="nc">C</span><span class="p">:</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="o">...</span>
+<div class="language-python highlight"><span class="filename">pkg/subpkg_b/__init__.py</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">.module_b</span> <span class="kn">import</span> <span class="n">B</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/subpkg_b/__init__.py</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span> <span class="nn">.module_b</span> <span class="kn">import</span> <span class="n">B</span>
+<div class="language-python highlight"><span class="filename">pkg/subpkg_b/module_b.py</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_c</span> <span class="kn">import</span> <span class="n">C</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="o">...</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">pkg/subpkg_b/module_b.py</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_c</span> <span class="kn">import</span> <span class="n">C</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="o">...</span>
-</span></code></pre></div>
-<p>Our subpackage init files here are re-exporting some names in this case classes from some of the modules inside of them.
-The problem is that every module in a subpackage depends on the init of the subpackage. </p>
-<p>So if the init of the subpackage depends on all the modules in the subpackage, 
+<p>Our subpackage <code>init</code> files here are re-exporting some names in this case classes from some of the modules inside of them.
+The problem is that every module in a subpackage depends on the <code>init</code> of the subpackage. </p>
+<p>So if the <code>init</code> of the subpackage depends on all the modules in the subpackage, 
 then we have kind of made a fake dependency of every module in the subpackage on every other module in the subpackage.</p>
-<p>That means even though <code>module_c</code> has no import at all, <code>module_c</code> now automatically also depends on <code>module_a</code> because it depends on the init.</p>
-<p><code>main</code> tries to import something from <code>module_b</code>, we first have to run the subpackage init, all <code>subpkg_b</code> does is import from <code>module_b</code>, so we start to import <code>module_b</code>.</p>
+<p>That means even though <code>module_c</code> has no import at all, <code>module_c</code> now automatically also depends on <code>module_a</code> because it depends on the <code>init</code>.</p>
+<p><code>main</code> tries to import something from <code>module_b</code>, we first have to run the subpackage <code>init</code>, all <code>subpkg_b</code> does is import from <code>module_b</code>, so we start to import <code>module_b</code>.</p>
 <p><code>module_b</code> wants to import something from <code>module_c</code>, so we first have to initialize <code>subpkg_a</code>. 
 But <code>subpkg_a</code> import from <code>module_a</code>, and <code>module_a</code> import from <code>module_b</code>, so now we have a cycle, 
 because we haven't finished initializing <code>module_b</code>.</p>
 <h3 id="solution_2">Solution</h3>
-<p>The way to get rid of the cycle is to just make all of your init files blank.</p>
+<p>The way to get rid of the cycle is to just make all of your <code>init</code> files blank.</p>
 <p>If you still want to give your users a short way to import names, you can define an interface package:</p>
-<div class="language-python highlight"><span class="filename">pkg/interface_a/__init__.py</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_a</span> <span class="kn">import</span> <span class="n">A</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_c</span> <span class="kn">import</span> <span class="n">C</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kn">from</span> <span class="nn">..subpkg_b.module_b</span> <span class="kn">import</span> <span class="n">B</span>
+<div class="language-python highlight"><span class="filename">pkg/interface_a/__init__.py</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_a</span> <span class="kn">import</span> <span class="n">A</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">from</span> <span class="nn">..subpkg_a.module_c</span> <span class="kn">import</span> <span class="n">C</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kn">from</span> <span class="nn">..subpkg_b.module_b</span> <span class="kn">import</span> <span class="n">B</span>
 </span></code></pre></div>
-<div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span> <span class="nn">pkg.interface_a</span> <span class="kn">import</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
+<div class="language-python highlight"><span class="filename">main.py</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span> <span class="nn">pkg.interface_a</span> <span class="kn">import</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span>
 </span></code></pre></div>
 
 
