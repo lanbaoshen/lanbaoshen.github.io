@@ -14,7 +14,7 @@ theme:
     - content.tabs.link
     - header.autohide
     - navigation.expand
-    - navigation.footer
+#    - navigation.footer
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
