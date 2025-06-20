@@ -9,7 +9,7 @@ theme:
     primary: black
   language: en
   features:
-    - announce.dismiss
+#    - announce.dismiss
     - content.code.copy
     - content.tabs.link
     - header.autohide
