@@ -9,8 +9,10 @@ theme:
     primary: black
   language: en
   features:
+    - announce.dismiss
     - content.code.copy
     - content.tabs.link
+    - header.autohide
     - navigation.expand
     - navigation.footer
     - navigation.indexes
@@ -73,3 +75,11 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - tables
+
+extra_css:
+  - css/custom.css
+
+extra_javascript:
+  - js/custom.js
+
+copyright: Copyright &copy; 2022 - 2025 Lanbao Shen

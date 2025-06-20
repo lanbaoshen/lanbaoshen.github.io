@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<div class="announce-wrapper">
+  <div id="announce-left">
+    <div class="item">
+      Follow <strong>@lanbaoshen</strong> on
+      <a class="announce-github" href="https://github.com/lanbaoshen" target="_blank">
+        <span class="twemoji fa-github-alt">
+          {% include ".icons/fontawesome/brands/github-alt.svg" %}
+        </span><strong>GitHub</strong>
+      </a>
+      and
+      <a class="announce-stackoverflow" href="https://stackoverflow.com/users/18602881/lanbao" target="_blank">
+        <span class="twemoji fa-stack-overflow">
+          {% include ".icons/fontawesome/brands/stack-overflow.svg" %}
+        </span>
+        <strong>stackoverflow</strong>
+      </a>
+    </div>
+    <div class="item">
+      <a class="announce-link" href="https://panzhixiang.cn" target="_blank">
+        <span class="twemoji link">
+          {% include ".icons/material/link-variant.svg" %}
+        </span><strong>Blogroll:</strong> GenAI Developer <strong>@panzhixiang</strong>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
