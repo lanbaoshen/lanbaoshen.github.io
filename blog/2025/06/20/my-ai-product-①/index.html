@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../../06/06/enhance-zsh/">
+        <link rel="prev" href="../../../../2024/12/21/running-local-model-with-ollama/">
       
       
-        <link rel="next" href="../../../../2025/06/20/my-ai-product-%E2%91%A0/">
+        <link rel="next" href="../../21/my-ai-product-%E2%91%A1/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Running Local Model with Ollama - Lanbao's Blog</title>
+        <title>My AI Product ① - Lanbao's Blog</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-local-model-with-ollama" class="md-skip">
+        <a href="#my-ai-product-1" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running Local Model with Ollama
+              My AI Product ①
             
           </span>
         </div>
@@ -628,54 +628,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-ollama" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Ollama
+      Implementation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-model" class="md-nav__link">
+  <a href="#issues" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Model
+      Issues
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-model" class="md-nav__link">
+  <a href="#reflection" class="md-nav__link">
     <span class="md-ellipsis">
-      Run Model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interact-via-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interact via API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interact-via-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interact via Code
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example
+      Reflection
     </span>
   </a>
   
@@ -737,7 +710,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-12-21 00:00:00+00:00" class="md-ellipsis">December 21, 2024</time>
+                        <time datetime="2025-06-20 00:00:00+00:00" class="md-ellipsis">June 20, 2025</time>
                       </div>
                     </li>
                     
@@ -770,6 +743,43 @@
               </li>
             </ul>
             
+              <ul class="md-post__meta md-nav__list">
+                <li class="md-nav__item md-nav__item--section">
+                  <div class="md-post__title">
+                    <span class="md-ellipsis">
+                      Related links
+                    </span>
+                  </div>
+                  <nav class="md-nav">
+                    <ul class="md-nav__list">
+                      
+                        
+                        
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../21/my-ai-product-%E2%91%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My AI Product ②
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+                      
+                    </ul>
+                  </nav>
+                </li>
+              </ul>
+            
           </nav>
           
         </div>
@@ -786,87 +796,57 @@
   
 
 
-<h1 id="running-local-model-with-ollama">Running Local Model with Ollama</h1>
-<p>Sometimes, I need to run a model locally on my machine. This is useful for debugging and testing purposes. </p>
-<p>This guide will show you how to run a model locally using Ollama.</p>
+<h1 id="my-ai-product-1">My AI Product ①</h1>
+<p>In October 2024, under the wave of AI, 
+my main development work shifted from the automation testing framework to the development of AI products.
+At this point, I only use AI as a search engine.</p>
+<p>Base on my experience with the automation testing framework, 
+the first AI product I want to develop is an AI Code generator, it primarily focuses on the generation of automated test scripts. 
+And I named it Step-Copilot.  </p>
 <!-- more -->
 
-<h2 id="install-ollama">Install Ollama</h2>
-<p>We can install Ollama from <a href="https://ollama.com/download">web page</a></p>
-<p>If you are using linux, you can install it using the following command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://ollama.com/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<h2 id="implementation">Implementation</h2>
+<p>In our workflow, we manage the test cases on Jira via Xray plugins, 
+and I create a script to automatically generate test scripts template which contain the 
+test action and expected result based on the test cases in Jira.</p>
+<p>Compared to widely known code assistants like GitHub Copilot. 
+I only expect Step-Copilot to be able to generate the implementation code for action and expected result 
+base on the code which tester has written in the past. </p>
+<p>So, I write a simple script to export the test scripts from our repo via AST, and format them into a JSON file.
+The structure of the JSON file is like this:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;action&gt;Test Action&lt;/action&gt;&lt;expected&gt;Test Expected Result&lt;/expected&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The code for the action and expected result&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">]</span>
 </span></code></pre></div>
-<h2 id="download-model">Download Model</h2>
-<p>I will use <a href="https://ollama.com/library/llama3.2:3b">llama3.2</a> model in the following example. So we need to download it first:</p>
-<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span class="termynal-comment" data-ty># 1B parameters, may take up 1.3GB of disk space</span><span class="termynal-comment" data-ty># ollama pull llama3.2:1b</span><span class="termynal-comment" data-ty># 3B parameters (default), may take up 2GB of disk space</span><span data-ty="input" data-ty-prompt="$">ollama pull llama3.2</span><span data-ty="progress"></span><span data-ty>success<br></span></div>
-
-<h2 id="run-model">Run Model</h2>
-<p>We can run the model using a command and interact with it using the terminal:</p>
-<div class="termy" data-termynal data-ty-macos data-ty-title="bash"><span data-ty="input" data-ty-prompt="$">ollama run llama3.2</span><span data-ty="input" data-ty-prompt="&gt;&gt;&gt;">hello</span><span data-ty>Hello! How can i assist you today?<br><br></span><span data-ty="input" data-ty-prompt="&gt;&gt;&gt;">Tell me a joke</span><span data-ty>Why don't eggs tell jokes?<br><br>Because they'd crack each other up!<br><br></span><span data-ty="input" data-ty-prompt="&gt;&gt;&gt;">/bye</span><span data-ty></span></div>
-
-<h2 id="interact-via-api">Interact via API</h2>
-<p>We can interact with the model using the API:
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>http://localhost:11434/api/chat<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">  &quot;model&quot;: &quot;llama3.2&quot;,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s1">  &quot;messages&quot;: [</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s1">    {</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s1">      &quot;role&quot;: &quot;user&quot;,</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s1">      &quot;content&quot;: &quot;Tell me i joke&quot;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s1">    }</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s1">  ],</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">  &quot;stream&quot;: false</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="s1">}&#39;</span>
-</span></code></pre></div></p>
-<h2 id="interact-via-code">Interact via Code</h2>
-<p>We can interact with the model using third party lib <code>ollama</code>, we need to install it first:
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>ollama
-</span></code></pre></div></p>
-<p>And then we can execute the following code:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">response</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  <span class="s1">&#39;llama3.2&#39;</span><span class="p">,</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello&#39;</span><span class="p">}],</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">)</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>  <span class="c1"># How can I assist you today?</span>
-</span></code></pre></div></p>
-<h2 id="example">Example</h2>
-<p>Here is a sample example of how to use <code>ollama</code> to collect statistical data:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">ollama</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">csv_content</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="s2">name, score</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s2">Mindy Luo, 97</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s2">Sovin Yang, 91</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s2">Leo Li, 90</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="s2">Lanbao Shen, 92</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="s2">Chang Li, 99</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="s2">Jarvan Shi, 93</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="s2">Find the student with the highest score and calculate the average score in the following CSV file.</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="s2">Only return result, no need to show the process.</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="s2"># CSV File</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="si">{input}</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">response</span> <span class="o">=</span> <span class="n">ollama</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>  <span class="s1">&#39;llama3.2&#39;</span><span class="p">,</span>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>  <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">prompt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">input</span><span class="o">=</span><span class="n">csv_content</span><span class="p">)}],</span>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="p">)</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-</span></code></pre></div>
-<p>When you run the code above, you may find the result is not right.
-This is the problem we will address later, and it will not be elaborated on here.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As of this writing, <code>ollama</code> has supported function calls since version <strong>0.4.0</strong>.
-You can refer to <a href="https://ollama.com/blog/functions-as-tools">functions-as-tools</a> for more information.</p>
-</div>
+<p>With the help of other professional AI engineers 
+(Without them, I think it would be very difficult for me to get started with AI application development.),
+I use the above JSON file to fine-tune a pre-trained LLM model and integrate it as a service with my script using FastAPI.</p>
+<h2 id="issues">Issues</h2>
+<p>This model performs exceptionally well in generating non-UI operation code. 
+For example, we need to use the <code>play_voice</code> method to play a voice in the test script,
+Step-Copilot can effectively set different parameters based on different actions.</p>
+<p>However, when generate UI operation code, it often hallucinates and calls non-existent methods.
+Although I have many ideas to improve it, I still stopped the development of Step-Copilot at this point.</p>
+<h2 id="reflection">Reflection</h2>
+<p>The entire product development, testing, and user feedback collection took approximately 15 working days.
+During this process, I divided the code generation into three levels of difficulty:</p>
+<ol>
+<li><strong>Very Easy</strong>: write a bubble sort algorithm, a fixed function where only the parameters change 
+(and the accepted parameters do not include complex objects). Or some fixed, repetitive code. 
+These are pieces of code that people can instantly verify for correctness.</li>
+<li><strong>Moderate</strong>: Code that both humans and AI can generate, 
+but the AI's output is difficult to verify at a glance—requiring more time to validate than writing it manually.</li>
+<li><strong>Complex</strong>: Complex or difficult code, or when one lacks the knowledge base. For example: 
+Asking a Python engineer to develop an Android application.</li>
+</ol>
+<p>Writing the UI test scripts is a moderate level task,
+rather than waiting for AI to complete the script and then debug it, it's better to just develop it directly.
+So, I stopped it.</p>
+<p>In my opinion, this was a failed project, but fortunately, 
+it didn't take much time, and through it, I gained some understanding of AI.</p>
 
 
 
