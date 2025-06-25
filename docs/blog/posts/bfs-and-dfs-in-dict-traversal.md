@@ -32,7 +32,7 @@ data = {
 }
 ```
 
-By constructing generators to implement BFS (Breadth-First Search) and DFS (Depth-First Search) respectively.
+By constructing generators to implement BFS and DFS respectively.
 
 ```python title="bfs.py"
 from collections import deque

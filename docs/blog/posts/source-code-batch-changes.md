@@ -9,7 +9,7 @@ categories:
 Sometimes, existing code needs to be modified in batches, 
 and these operations are too complex to be achieved through the IDE's replacement function.
 
-[AST (Abstract Syntax Trees)](https://docs.python.org/3/library/ast.html) is a good choice to do that.
+[AST](https://docs.python.org/3/library/ast.html) is a good choice to do that.
 
 <!-- more -->
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     ...
 ```
 
-Visiting ast node through NodeTransformer:
+Visiting AST node through NodeTransformer:
 
 ```python title="transformer.py"
 from ast import *
