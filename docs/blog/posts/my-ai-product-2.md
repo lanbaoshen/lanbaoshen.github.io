@@ -4,6 +4,7 @@ categories:
   - AI
 links:
   - My AI Product ①: blog/posts/my-ai-product-1.md
+  - My AI Product ③: blog/posts/my-ai-product-3.md
 ---
 
 # My AI Product ②
@@ -21,7 +22,7 @@ most users would likely ignore it and choose to directly ask the tool developers
 It would be incredibly helpful to have a AI that not only uses all the tools 
 but also teaches users which scenarios to apply each tool in.
 
-Based on this idea, I developed the **Jira AI Assistant**, abbreviated as **JAA**.
+Based on this idea, I developed the **JAA**
 
 <!-- more -->
 
