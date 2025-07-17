@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../../06/21/my-ai-product-%E2%91%A1/">
+        <link rel="prev" href="../../01/my-ai-product-%E2%91%A2/">
       
-      
-        <link rel="next" href="../../17/my-ai-product-%E2%91%A3/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>My AI Product ③ - Lanbao's Blog</title>
+        <title>My AI Product ④ - Lanbao's Blog</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#my-ai-product-3" class="md-skip">
+        <a href="#my-ai-product-4" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              My AI Product ③
+              My AI Product ④
             
           </span>
         </div>
@@ -621,6 +619,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#measurement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Measurement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Efficiency
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -675,7 +708,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-07-01 00:00:00+00:00" class="md-ellipsis">July 1, 2025</time>
+                        <time datetime="2025-07-17 00:00:00+00:00" class="md-ellipsis">July 17, 2025</time>
                       </div>
                     </li>
                     
@@ -697,7 +730,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -725,34 +758,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../06/21/my-ai-product-%E2%91%A1/" class="md-nav__link">
+      <a href="../../01/my-ai-product-%E2%91%A2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    My AI Product ②
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-                      
-                        
-                        
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../17/my-ai-product-%E2%91%A3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    My AI Product ④
+    My AI Product ③
     
   </span>
   
@@ -783,29 +794,58 @@
   
 
 
-<h1 id="my-ai-product-3">My AI Product ③</h1>
-<p>The previously mentioned <abbr title="Jira AI Assistant">JAA</abbr> has been operating continuously for six months and has gained a stable user base. 
-Tomorrow, I need to attend the company's OPEN AI DAY to share about <abbr title="Jira AI Assistant">JAA</abbr> in Shanghai.</p>
-<p>If it were half a year ago, I would have been very willing and had a lot to say, 
-but now, I think it's already somewhat outdated.</p>
+<h1 id="my-ai-product-4">My AI Product ④</h1>
+<p>In the entire automated testing process, the most time-consuming tasks are maintaining UI changes and analyzing test reports.
+So, I want AI to analyze the test results to assist testers in improving the efficiency of report analysis.</p>
+<p>This project is named <abbr title="Report Analysis Assistant">RAA</abbr>, base on AutoGen.</p>
 <!-- more -->
 
-<p>After <abbr title="Jira AI Assistant">JAA</abbr> had been running for a short while, I once thought about what other directions it could develop in:</p>
-<p>First, the core of <abbr title="Jira AI Assistant">JAA</abbr> is function call, so simply replacing the tools can turn it into a Jenkins AI Assistant, GitHub AI Assistant, and so on.</p>
-<p>Second, perhaps I can package the tool part of my code into a Python library. 
-Then others can download this library and develop applications that go beyond my existing framework (I'm using AutoGen).</p>
-<p>While I was having these ideas (early December 2024), Anthropic introduced <abbr title="Model Context Protocol">MCP</abbr> at the end of the previous month. 
-So I immediately went to GitHub to create a repo named <code>mcp-jira</code>, 
-but I discovered that <a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a> (Jira + Confluence) already existed and had 100 stars.
-Instead, I contributed some code to that repository and discussed a few ideas with the author via GitHub.</p>
-<p>At the same time, since I also needed to use Jenkins for work, 
-I developed another project called <a href="https://github.com/lanbaoshen/mcp-jenkins">mcp-jenkins</a>.
-Although there were other similar repo at the time, they had few stars, limited tool support, 
-and I felt their engineering practices were lacking.</p>
-<p>After developing my own <abbr title="Model Context Protocol">MCP</abbr> server, I abandoned the initial idea of replacing function calls with <abbr title="Model Context Protocol">MCP</abbr>.</p>
-<p>I realized that <abbr title="Model Context Protocol">MCP</abbr> is better suited for providing general-purpose functionalities, 
-while my <abbr title="Jira AI Assistant">JAA</abbr> contains a lot of independent business logic that might change with API versions. 
-From both a security and practicality perspective, it was not suitable to serve as an <abbr title="Model Context Protocol">MCP</abbr> server.</p>
+<h2 id="measurement">Measurement</h2>
+<p>I believe that confirming the metrics is the top priority before starting development. </p>
+<p>The most straightforward aspect is how to reflect efficiency improvements. 
+Directly asking developers whether time was saved is the ugliest approach, especially when perceived efficiency improves but actually takes more time.</p>
+<p>Since our automated testing infrastructure is well-established with a dedicated platform where report analysis is completed directly, 
+I can use tracking points to measure how long it takes for developers from starting the analysis to sending the report.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The quality of AI performance and efficiency improvements are not directly linearly correlated.</p>
+</div>
+<p>We also need additional metrics to evaluate the performance of AI analysis, 
+which will guide future optimization efforts. </p>
+<p>In my case, the analysis conclusion of a failed case must include the <strong>category</strong>, 
+<strong>issue link</strong> (we use Jira for management), and a <strong>comment</strong> of the issue.</p>
+<p>After the dev sends the report, the actual values from the user report and the AI's values will be compared to calculate a similarity rate.
+Based on this similarity rate, I can identify the areas where the AI's performance is lacking.</p>
+<h2 id="design">Design</h2>
+<p>It is necessary to clarify what kind of data analysis the AI should be based on and how to provide the data to the AI:
+1. Screenshot of the device when it fails.
+2. By combining the stack trace at the time of failure and the information from the Jira case, 
+determine what needs to be done, how to do it, and what errors occurred during execution.
+3. Historical analysis results can help the AI understand relevant defects and learn user preferences.
+4. Developers can customize rules and analysis preferences for the AI.</p>
+<p>For security considerations, I chose a local 7B multimodal model, MINICPM-V, for handling screenshots. 
+To improve the accuracy of image recognition and the validity of the results, I fine-tuned this model by annotating some data myself.</p>
+<p>The case information on Jira can be retrieved via the official API. 
+To optimize requests to other platforms, I used Redis to cache certain data. 
+For example, case information doesn't change frequently, so it's stored for 30 days, 
+while defect tickets, which require higher timeliness, are cached for 12 hours.
+I input the failed case script code and the actual retrieved information into my custom agent, which then summarizes:
+1. What the test case was expected to do
+2. How the code implemented it
+3. Which steps succeeded
+4. Which steps failed, and the reasons for the failures</p>
+<p>Historical analysis results are stored in a database. 
+During AI analysis, relevant results are queried based on similarity (case key + failed code line + exception message) for reference. 
+This is implemented using AutoGen's ChromaDB memory, with Redis as an optimization layer. 
+The result indices are stored in Redis and expire if unused for 15 days (or after at least two analysis cycles), 
+after which they are deleted from the database.</p>
+<p>I provide users with an entry to write their own prompts per test application. 
+When analyzing issues, the application fetches these prompts dynamically, which is also implemented using memory.</p>
+<h2 id="efficiency">Efficiency</h2>
+<p>The project is already live. Without optimizing individual applications, 
+the average similarity rate fluctuates between <strong>40%</strong> and <strong>75%</strong>.
+Additionally, as the user's analysis history grows, the similarity rate shows a steady improvement.</p>
+<p>Based on time statistics, the approximate time saved is around <strong>20%</strong>.</p>
 
 
 
