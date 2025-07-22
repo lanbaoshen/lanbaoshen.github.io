@@ -41,6 +41,7 @@ Based on this similarity rate, I can identify the areas where the AI's performan
 ## Design
 
 It is necessary to clarify what kind of data analysis the AI should be based on and how to provide the data to the AI:
+
 1. Screenshot of the device when it fails.
 2. By combining the stack trace at the time of failure and the information from the Jira case, 
 determine what needs to be done, how to do it, and what errors occurred during execution.
@@ -51,17 +52,20 @@ For security considerations, I chose a local 7B multimodal model, MINICPM-V, for
 To improve the accuracy of image recognition and the validity of the results, I fine-tuned this model by annotating some data myself.
 
 The case information on Jira can be retrieved via the official API. 
-To optimize requests to other platforms, I used Redis to cache certain data. 
+To optimize requests to other platforms, I used Redis to cache certain data.
+
 For example, case information doesn't change frequently, so it's stored for 30 days, 
 while defect tickets, which require higher timeliness, are cached for 12 hours.
 I input the failed case script code and the actual retrieved information into my custom agent, which then summarizes:
+
 1. What the test case was expected to do
 2. How the code implemented it
 3. Which steps succeeded
 4. Which steps failed, and the reasons for the failures
 
 Historical analysis results are stored in a database. 
-During AI analysis, relevant results are queried based on similarity (case key + failed code line + exception message) for reference. 
+During AI analysis, relevant results are queried based on similarity (case key + failed code line + exception message) for reference.
+
 This is implemented using AutoGen's ChromaDB memory, with Redis as an optimization layer. 
 The result indices are stored in Redis and expire if unused for 15 days (or after at least two analysis cycles), 
 after which they are deleted from the database.
