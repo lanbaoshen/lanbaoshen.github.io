@@ -57,10 +57,10 @@ In the previous example, `cls` is `__main__.EnhancePath`, so it will not change 
 So, we need to optimize our code like this:
 
 ```python
-import sys
 from pathlib import Path
 
-class EnhancePath(Path if sys.version_info >= (3, 13) else type(Path())):
+# https://stackoverflow.com/questions/61689391/error-with-simple-subclassing-of-pathlib-path-no-flavour-attribute
+class EnhancePath(type(Path()), Path):
     def zip(self):
         print('zip file')
 
