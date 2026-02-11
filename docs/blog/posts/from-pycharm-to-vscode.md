@@ -40,17 +40,6 @@ We can refer to the tutorial to complete the configuration of GitHub Copilot.
 I set `GitHub Dark Default` as the theme. You can click `Browser Color Themes` to search it,
 or enter `> theme` into the `Command Palette` and select `Preferences: Browse Color Themes in Marketplace`.
 
-## Settings
-
-Press `⌘` + `,` to open settings.
-
-- Set `Files: Auto Save` to `afterDelay`, and the default delay in milliseconds is `1000`.
-- Enable `files.trimFinalNewlines`
-- Enable `files.insertFinalNewline`
-- Enable `files.trimTrailingWhitespace`
-
-PS: I use `ruff` to format my code, so I haven't configured the formatter-related features in VS Code.
-
 ## Extensions
 
 - `Python`
@@ -59,13 +48,24 @@ PS: I use `ruff` to format my code, so I haven't configured the formatter-relate
 - `IntelliJ IDEA Keybindings`
 - `SQL Database Projects`
 
-## Git Color
+## Settings
 
-Search `workbench.colorCustomizations` settings, then click `Edit in settings.json`, input the follow code to customize git file colors:
+Press `⌘` + `,` to open settings.
 
-```json title="settings.json"
+- Set `Files: Auto Save` to `afterDelay`, and the default delay in milliseconds is `1000`.
+- Enable `files.trimFinalNewlines`
+- Enable `files.insertFinalNewline`
+- Enable `files.trimTrailingWhitespace`
+- Set `workbench.colorCustomizations`
+
+```json title="~/Library/Application Support/Code/User/settings.json"
 {
-    ...,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.colorTheme": "GitHub Dark Default",
+    "files.autoSave": "afterDelay",
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "workbench.colorCustomizations": {
         "gitDecoration.modifiedResourceForeground": "#5a9bea",
         "gitDecoration.addedResourceForeground": "#00FF00",
@@ -73,14 +73,16 @@ Search `workbench.colorCustomizations` settings, then click `Edit in settings.js
         "gitDecoration.ignoredResourceForeground": "#e2d227",
         "gitDecoration.conflictingResourceForeground": "#FF69B4",
         "gitDecoration.deletedResourceForeground": "#535151"
-    }
+    },
+    "git.autofetch": true
 }
 ```
 
+PS: I use `ruff` to format my code, so I haven't configured the formatter-related features in VS Code.
 
 ## Keyboard Shotcuts
 
-```json title="keybindings.json"
+```json title="~/Library/Application Support/Code/User/keybindings.json"
 // Place your key bindings in this file to override the defaults
 [
     {
